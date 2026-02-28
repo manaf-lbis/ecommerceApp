@@ -14,7 +14,12 @@ export default defineConfig([
       tseslint.configs.recommended,
       reactHooks.configs.flat.recommended,
       reactRefresh.configs.vite,
+      
     ],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+
+    },
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
