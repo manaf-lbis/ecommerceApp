@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { useSelector } from "react-redux"
 import type { RootState } from "@/store"
+import { CartIcon } from "./CartIcon"
 
 const Navbar = () => {
     const user = useSelector((state: RootState) => state.authState)
@@ -26,7 +27,8 @@ const Navbar = () => {
                     </Link>
                 </div>
 
-                <div>
+                <div className="flex gap-5 justify-center items-center">
+                    <CartIcon count={10} />
                     {
                         user.isAuthenticated ? 
 

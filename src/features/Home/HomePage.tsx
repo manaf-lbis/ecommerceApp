@@ -1,11 +1,10 @@
 import { ProductCard } from '@/components/appComponents/ProductCard'
 import { useGetProductsQuery } from '@/services/productApi'
-import React from 'react'
 import Shimmer from '@/components/appComponents/Shimmer'
 
 const HomePage = () => {
-  const { data, isLoading, isError, error } = useGetProductsQuery({
-    limit: 10,
+  const { data, isLoading, isError } = useGetProductsQuery({
+    limit: 12,
     skip: 0,
   })
 
@@ -31,9 +30,10 @@ const HomePage = () => {
 
   return (
     <div className="container mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-8 text-center">
+      <h1 className="text-3xl font-bold mb-8">
         Latest Products
       </h1>
+
 
       <div className="grid gap-6 grid-cols-1  sm:grid-cols-2  md:grid-cols-3  lg:grid-cols-4">
         {data.products.map((product :any) => (

@@ -17,7 +17,7 @@ export function ProductCard({ product }: ProductCardProps) {
     product.price - (product.price * product.discountPercentage) / 100
 
   const imageUrl =
-    product.images?.[0] || product.image || "/placeholder.png"
+    product?.images?.[0] || "/placeholder.png"
 
   return (
     <Card className="flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-xl">

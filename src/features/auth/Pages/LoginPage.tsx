@@ -16,11 +16,12 @@ import toast from "react-hot-toast"
 import { successfullLogin } from "../AuthSlice"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import { Loader } from "lucide-react"
 
 const LoginPage = () => {
 
     const dispatch = useDispatch()
-    const [login] = useLoginMutation()
+    const [login,{isLoading}] = useLoginMutation()
     const [credential, setcredential] = useState({ username: '', password: '' })
     const navigate = useNavigate()
 
@@ -90,7 +91,7 @@ const LoginPage = () => {
                 </CardContent>
                 <CardFooter className="flex-col gap-2">
                     <Button type="submit" className="w-full cursor-pointer" onClick={submitLogin}>
-                        Login
+                        {isLoading ? <Loader className="animate-spin" /> : 'Login'}
                     </Button>
 
                 </CardFooter>
