@@ -28,5 +28,5 @@ const authApi = createSlice({
 
 });
 
-export const { successfullLogin } = authApi.actions
+export const { successfullLogin,logout } = authApi.actions
 export default authApi.reducer

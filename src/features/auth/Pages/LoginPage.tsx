@@ -30,7 +30,7 @@ const LoginPage = () => {
             const data = await login(credential).unwrap()
             console.log(data);
             localStorage.setItem('token', data.accessToken)
-            localStorage.setItem('user', JSON.stringify({name: data?.firstName + data?.lastName || '',id:data?.id,email:data.email}))
+            localStorage.setItem('user', JSON.stringify({user:{name: data?.firstName + data?.lastName || '',id:data?.id,email:data.email},isAuthenticated:true}))
 
             dispatch(successfullLogin({ email: data?.email, id: data?.id, name: data?.firstName +' '+ data?.lastName }))
             navigate('/home')
