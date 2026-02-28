@@ -1,13 +1,15 @@
 import { ShoppingCart } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { useNavigate } from "react-router-dom"
 
 interface CartIconProps {
   count: number
 }
 
 export function CartIcon({ count }: CartIconProps) {
+  const navigate = useNavigate()
   return (
-    <div className="relative cursor-pointer">
+    <div className="relative cursor-pointer" onClick={() => navigate('/cart')}>
       <ShoppingCart className="w-6 h-6" />
 
       {count > 0 && (
