@@ -17,6 +17,8 @@ import { successfullLogin } from "../AuthSlice"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { Loader } from "lucide-react"
+import { validatePassword } from "@/validators/passwordValidator"
+import { validateUsername } from "@/validators/usernameValidator"
 
 const LoginPage = () => {
 
@@ -27,10 +29,18 @@ const LoginPage = () => {
 
     async function submitLogin() {
         try {
+            if(!validateUsername(credential.username)){
+                toast.error('invalid usename')
+                return
+            } else if(!validatePassword(credential.password)){
+                toast.error('invalid Password')
+                return
+            }
+
             const data = await login(credential).unwrap()
             console.log(data);
             localStorage.setItem('token', data.accessToken)
-            localStorage.setItem('user', JSON.stringify({user:{name: data?.firstName + data?.lastName || '',id:data?.id,email:data.email},isAuthenticated:true}))
+            localStorage.setItem('user', JSON.stringify({user:{name: data?.firstName +' '+ data?.lastName || '',id:data?.id,email:data.email},isAuthenticated:true}))
 
             dispatch(successfullLogin({ email: data?.email, id: data?.id, name: data?.firstName +' '+ data?.lastName }))
             navigate('/home')
@@ -38,7 +48,6 @@ const LoginPage = () => {
             toast.error(error?.data?.message || 'Server Error')
         }
     }
-
 
 
 
@@ -62,26 +71,19 @@ const LoginPage = () => {
                                 <Input
                                     id="email"
                                     type="email"
-                                    placeholder="m@example.com"
+                                    placeholder="user@example.com"
                                     required
                                     value={credential.username}
                                     onChange={(e) => setcredential({ ...credential, username: e.target.value })}
                                 />
                             </div>
                             <div className="grid gap-2">
-                                <div className="flex items-center">
-                                    <Label htmlFor="password">Password</Label>
-                                    <a
-                                        href="#"
-                                        className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                                    >
-                                        Forgot your password?
-                                    </a>
-                                </div>
+                                
                                 <Input
                                     id="password"
                                     type="password"
                                     required
+                                    placeholder="********* **"
                                     value={credential.password}
                                     onChange={(e) => setcredential({ ...credential, password: e.target.value })}
                                 />
