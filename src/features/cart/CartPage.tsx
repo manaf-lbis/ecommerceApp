@@ -82,4 +82,4 @@ const CartPage = () => {
     )
 }
 
-export default CartPage
+export default React.memo(CartPage) 
