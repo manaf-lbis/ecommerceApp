@@ -1,73 +1,80 @@
-# React + TypeScript + Vite
+# 🛒 Ecommerce App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Ecommerce app built with clean architecture and optimized components. The focus on writing maintainable code while delivering a smooth user experience.
 
-Currently, two official plugins are available:
+### 🌐 Live Demo
+[Click Here to View Live App](https://ecommerce-app-aeog.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Technology | Icon | Purpose |
+| :--- | :---: | :--- |
+| **React** | ![React](https://img.shields.io/badge/react-%23202322.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) | UI Library |
+| **TypeScript** | ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) | Type Safety |
+| **Redux Toolkit** | ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white) | State Management |
+| **RTK Query** | ![RTK](https://img.shields.io/badge/RTK_Query-yellow?style=for-the-badge&logo=redux) | Data Fetching |
+| **Tailwind CSS** | ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) | Styling |
+| **Shadcn/UI** | ![Shadcn/UI](https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white) | UI Components |
+| **React Hot Toast** | ![Toast](https://img.shields.io/badge/Hot_Toast-FF4B4B?style=for-the-badge) | Notifications |
+| **Vite** | ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) | Build Tool |
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Local Setup & Installation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Follow these steps to get the project running on your local machine:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/manaf-lbis/ecommerceApp.git](https://github.com/manaf-lbis/ecommerceApp.git)
+cd ecommerceApp
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Local Setup & Installation
+Follow these steps to run the project locally.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1 Clone the Repository
+
+```bash
+git clone https://github.com/manaf-lbis/ecommerceApp.git
 ```
+
+---
+
+### 2️ Navigate to Project Folder
+
+```bash
+cd ecommerceApp
+```
+
+---
+
+### 3️ Install Dependencies
+
+Make sure you have **Node.js (v18 or higher)** installed.
+
+```bash
+npm install
+```
+
+### 4️ Start Development Server
+
+```bash
+npm run dev
+```
+---
+
+### 5️ Open in Browser
+
+After running the development server, open:
+
+```
+http://localhost:5173
+```
+
+
+
